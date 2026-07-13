@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Technologies | Building Digital Futures Through Innovation</title>
+<meta name="description" content="Nexora Technologies is an Oman-based technology company delivering school management, healthcare, enterprise and AI solutions aligned with Oman Vision 2040.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=24 height=24 rx=6 fill=%22%230b1a2b%22/><path d=%22M6 17V7l12 10V7%22 stroke=%22%23c9a24b%22 stroke-width=%221.8%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@500;700;800&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --navy-950:#070f18;
+  --navy-900:#0b1a2b;
+  --navy-800:#132b43;
+  --navy-700:#1c3d5c;
+  --gold-500:#c9a24b;
+  --gold-300:#e6c977;
+  --gold-050:#faf3e2;
+  --green-600:#116b5a;
+  --green-500:#158772;
+  --ivory-50:#f7f5ef;
+  --ivory-100:#efeadf;
+  --ink-900:#0d1520;
+  --ink-700:#2a3542;
+  --slate-500:#5c6b7d;
+  --slate-400:#8798a9;
+  --white:#ffffff;
+  --line:#e4e0d4;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:26px;
+  --shadow-1:0 8px 26px rgba(7,15,24,.08);
+  --shadow-2:0 24px 64px rgba(7,15,24,.20);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --font-en-d:'Space Grotesk',sans-serif;
+  --font-en-b:'Inter',sans-serif;
+  --font-ar-d:'Tajawal',sans-serif;
+  --font-ar-b:'Almarai',sans-serif;
+  --maxw:1200px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{
+  background:var(--ivory-50);
+  color:var(--ink-900);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body.lang-en{font-family:var(--font-en-b);}
+body.lang-en h1,body.lang-en h2,body.lang-en h3,body.lang-en h4,body.lang-en .display{font-family:var(--font-en-d);}
+body.lang-ar{font-family:var(--font-ar-b);letter-spacing:0 !important;line-height:1.95;}
+body.lang-ar h1,body.lang-ar h2,body.lang-ar h3,body.lang-ar h4,body.lang-ar .display{font-family:var(--font-ar-d);line-height:1.5;}
+body.lang-ar{font-size:16.5px;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;cursor:pointer;background:none;border:none;color:inherit;}
+ul{list-style:none;}
+input,select,textarea{font:inherit;}
+.container{max-width:var(--maxw);margin-inline:auto;padding-inline:24px;}
+section{position:relative;}
+.h-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-500);margin-bottom:14px;
+}
+body.lang-ar .h-eyebrow{letter-spacing:0;}
+.h-eyebrow::before{content:"";width:22px;height:2px;background:var(--gold-500);display:inline-block;}
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head.center{margin-inline:auto;text-align:center;}
+h2.display{font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.01em;color:var(--navy-900);}
+body.lang-ar h2.display{letter-spacing:0;font-weight:800;}
+.lede{color:var(--slate-500);font-size:16.5px;margin-top:14px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:999px;font-weight:600;font-size:14.5px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+  white-space:nowrap;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold-300),var(--gold-500));color:var(--navy-950);box-shadow:0 10px 26px rgba(201,162,75,.35);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(201,162,75,.45);}
+.btn-outline{border:1.5px solid rgba(255,255,255,.35);color:#fff;}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+.btn-outline-dark{border:1.5px solid var(--navy-700);color:var(--navy-900);}
+.btn-outline-dark:hover{background:var(--navy-900);color:#fff;}
+.btn-sm{padding:10px 20px;font-size:13.5px;}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;background:var(--ivory-100);color:var(--navy-800);}
+.icon{width:22px;height:22px;flex-shrink:0;}
+.icon-lg{width:30px;height:30px;}
+:focus-visible{outline:2.5px solid var(--gold-500);outline-offset:3px;border-radius:4px;}
+
+/* ============ HEADER ============ */
+.skip-link{position:absolute;top:-60px;inset-inline-start:12px;background:var(--navy-900);color:#fff;padding:10px 18px;border-radius:8px;z-index:999;transition:top .2s;}
+.skip-link:focus{top:12px;}
+header{
+  position:fixed;top:0;inset-inline:0;z-index:500;
+  padding-block:18px;transition:padding .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease);
+}
+header .container{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+header.scrolled{padding-block:11px;background:rgba(11,26,43,.86);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 8px 30px rgba(7,15,24,.25);}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--gold-300),var(--gold-500));display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  opacity:0;transform:scale(.45) rotate(-14deg);animation:markPop .7s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:.05s;}
+.brand-mark svg{width:20px;height:20px;color:var(--navy-950);}
+.brand-mark .logo-draw{stroke-dasharray:60;stroke-dashoffset:60;animation:drawIn 1s ease forwards;animation-delay:.3s;}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;}
+.brand-text b{font-family:var(--font-en-d);color:#fff;font-size:18px;letter-spacing:.01em;}
+body.lang-ar .brand-text b{font-family:var(--font-ar-d);}
+.brand-text span{font-size:10px;letter-spacing:.2em;color:var(--gold-300);text-transform:uppercase;font-weight:600;}
+body.lang-ar .brand-text span{letter-spacing:0;}
+.brand-text .cap-anim{display:inline-block;opacity:0;animation:capFade .6s ease forwards;animation-delay:.9s;}
+.lg-word{position:relative;display:inline-block;animation:lgGlow 4.5s ease-in-out infinite;animation-delay:1.5s;}
+.lg-letter{display:inline-block;opacity:0;transform:translateY(12px);animation:lgLetterIn .55s cubic-bezier(.22,.61,.36,1) forwards;}
+@keyframes markPop{to{opacity:1;transform:none;}}
+@keyframes drawIn{to{stroke-dashoffset:0;}}
+@keyframes capFade{to{opacity:1;}}
+@keyframes lgLetterIn{to{opacity:1;transform:none;}}
+@keyframes lgGlow{0%,80%,100%{text-shadow:0 0 0 rgba(230,201,119,0);letter-spacing:.01em;}40%{text-shadow:0 0 16px rgba(230,201,119,.65);letter-spacing:.035em;}}
+@media(prefers-reduced-motion:reduce){
+  .brand-mark,.brand-mark .logo-draw,.brand-text .cap-anim,.lg-letter{animation:none !important;opacity:1 !important;transform:none !important;stroke-dashoffset:0 !important;}
+  .lg-word{animation:none !important;}
+}
+nav.mainnav{display:flex;align-items:center;gap:2px;}
+nav.mainnav a{padding:10px 15px;font-size:14px;font-weight:500;color:rgba(255,255,255,.78);border-radius:8px;transition:color .2s,background .2s;}
+nav.mainnav a:hover{color:#fff;background:rgba(255,255,255,.06);}
+nav.mainnav a.active{color:#fff;font-weight:700;}
+.header-actions{display:flex;align-items:center;gap:10px;}
+.lang-switch{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:3px;}
+.lang-switch button{padding:6px 13px;border-radius:999px;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.6);transition:all .2s;}
+.lang-switch button.active{background:var(--gold-500);color:var(--navy-950);}
+.menu-toggle{display:none;color:#fff;padding:6px;}
+.menu-toggle svg{width:26px;height:26px;}
+
+/* mobile nav */
+.mobile-nav{position:fixed;inset:0;background:var(--navy-950);z-index:600;display:flex;flex-direction:column;padding:26px 24px;transform:translateY(-100%);transition:transform .35s var(--ease);}
+.mobile-nav.open{transform:translateY(0);}
+.mobile-nav .mtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;}
+.mobile-nav a{display:block;padding:16px 4px;font-size:20px;font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);}
+.mobile-nav .mcta{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
+
+@media(max-width:980px){
+  nav.mainnav{display:none;}
+  .menu-toggle{display:block;}
+  .header-actions .btn-gold.desktop-only{display:none;}
+}
+
+/* ============ HERO ============ */
+.hero{
+  background:radial-gradient(1100px 620px at 78% -10%,rgba(201,162,75,.16),transparent 60%),
+             radial-gradient(900px 500px at 10% 110%,rgba(17,107,90,.20),transparent 60%),
+             linear-gradient(180deg,var(--navy-950),var(--navy-900) 55%,var(--navy-900));
+  color:#fff;padding:168px 0 110px;overflow:hidden;
+}
+.hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+.hero h1{font-size:clamp(34px,5vw,58px);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+body.lang-ar .hero h1{letter-spacing:0;font-weight:800;line-height:1.35;}
+.hero .gold-word{background:linear-gradient(135deg,var(--gold-300),var(--gold-500));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p.lede{color:#c3cedb;font-size:18px;max-width:520px;margin-top:22px;}
+.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+.hero-tags{display:flex;gap:10px;margin-top:38px;flex-wrap:wrap;}
+.hero-tag{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#dfe6ee;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:8px 14px;border-radius:999px;}
+.hero-tag svg{width:15px;height:15px;color:var(--gold-300);}
+.hero-visual{position:relative;aspect-ratio:1/1;}
+.hero-visual svg{width:100%;height:100%;}
+@media(max-width:980px){
+  .hero .container{grid-template-columns:1fr;}
+  .hero{padding:140px 0 70px;text-align:center;}
+  .hero p.lede{margin-inline:auto;}
+  .hero-ctas,.hero-tags{justify-content:center;}
+  .hero-visual{max-width:340px;margin-inline:auto;}
+}
+
+/* lattice/circuit signature animation */
+.lattice-line{stroke:var(--gold-300);stroke-width:1.1;fill:none;opacity:.85;stroke-dasharray:6 6;stroke-linecap:round;animation:dash 40s linear infinite;}
+.lattice-line.b{stroke:var(--green-500);opacity:.55;}
+.lattice-node{fill:var(--gold-300);animation:pulse 3.2s ease-in-out infinite;}
+.lattice-node.b{fill:var(--green-500);animation-delay:1.1s;}
+.lattice-node.c{fill:#fff;animation-delay:2s;}
+@keyframes dash{to{stroke-dashoffset:-1000;}}
+@keyframes pulse{0%,100%{opacity:.55;r:2.6;}50%{opacity:1;r:4.2;}}
+@media(prefers-reduced-motion:reduce){.lattice-line,.lattice-node{animation:none;}}
+
+/* ============ GENERIC SECTIONS ============ */
+.section{padding:96px 0;}
+.section.tight{padding:76px 0;}
+.section.alt{background:#fff;}
+.section.dark{background:linear-gradient(180deg,var(--navy-900),var(--navy-950));color:#fff;}
+.section.dark .lede{color:#a9b7c6;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}
+
+/* stat chips */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;}
+.stat-chip{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:24px 20px;text-align:center;box-shadow:var(--shadow-1);}
+.stat-chip b{display:block;font-family:var(--font-en-d);font-size:30px;color:var(--navy-900);}
+body.lang-ar .stat-chip b{font-family:var(--font-ar-d);}
+.stat-chip span{font-size:12.5px;color:var(--slate-500);font-weight:600;}
+@media(max-width:840px){.stats-row{grid-template-columns:repeat(2,1fr);}}
+
+/* card grid */
+.grid{display:grid;gap:24px;}
+.grid.cols-3{grid-template-columns:repeat(3,1fr);}
+.grid.cols-4{grid-template-columns:repeat(4,1fr);}
+.grid.cols-2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:980px){.grid.cols-3,.grid.cols-4{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.grid.cols-2,.grid.cols-3,.grid.cols-4{grid-template-columns:1fr;}}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-2);border-color:transparent;}
+.card .icon-wrap{width:52px;height:52px;border-radius:12px;background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.card .icon-wrap svg{color:var(--gold-300);}
+.card h3{font-size:19px;color:var(--navy-900);margin-bottom:10px;}
+.card p{color:var(--slate-500);font-size:14.5px;}
+.card .feat-list{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.card .feat-list li{font-size:12.5px;font-weight:600;color:var(--green-600);background:#eef6f3;padding:6px 11px;border-radius:999px;display:flex;align-items:center;gap:5px;}
+.card .feat-list li svg{width:12px;height:12px;}
+
+/* why nexora (dark) */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:var(--radius-md);overflow:hidden;margin-top:8px;}
+.why-item{background:var(--navy-900);padding:34px 26px;}
+.why-item .icon-wrap{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.why-item .icon-wrap svg{color:var(--gold-300);}
+.why-item h3{font-size:17px;color:#fff;margin-bottom:8px;}
+.why-item p{font-size:13.8px;color:#a9b7c6;}
+@media(max-width:980px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr;}}
+
+/* CTA band */
+.cta-band{background:linear-gradient(120deg,var(--navy-900),var(--green-600) 140%);border-radius:var(--radius-lg);padding:56px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:#fff;flex-wrap:wrap;}
+.cta-band h3{font-size:26px;max-width:480px;}
+.cta-band .actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* PAGES container */
+.page{display:none;}
+.page.active{display:block;}
+
+/* Hero-like page banner (non-home pages) */
+.page-banner{background:linear-gradient(180deg,var(--navy-950),var(--navy-900));color:#fff;padding:150px 0 70px;position:relative;overflow:hidden;}
+.page-banner .container{position:relative;z-index:2;}
+.page-banner h1{font-size:clamp(28px,4vw,44px);font-weight:700;}
+body.lang-ar .page-banner h1{font-weight:800;}
+.page-banner .crumb{color:var(--gold-300);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:block;}
+body.lang-ar .page-banner .crumb{letter-spacing:0;}
+.page-banner p{color:#b7c3d1;max-width:560px;margin-top:14px;font-size:16px;}
+.banner-deco{position:absolute;inset-inline-end:-60px;top:-40px;width:340px;height:340px;opacity:.5;}
+
+/* about */
+.vm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.vm-card{border-radius:var(--radius-md);padding:34px;color:#fff;}
+.vm-card.vision{background:linear-gradient(135deg,var(--navy-900),var(--navy-800));}
+.vm-card.mission{background:linear-gradient(135deg,var(--green-600),#0c4f42);}
+.vm-card .icon-wrap{width:50px;height:50px;border-radius:12px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.vm-card h3{font-size:20px;margin-bottom:12px;}
+.vm-card p{color:rgba(255,255,255,.85);font-size:15px;}
+@media(max-width:760px){.vm-grid{grid-template-columns:1fr;}}
+
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px;}
+.value-item{text-align:center;padding:26px 14px;}
+.value-item .num{font-family:var(--font-en-d);font-size:13px;color:var(--gold-500);font-weight:700;margin-bottom:10px;}
+body.lang-ar .value-item .num{font-family:var(--font-ar-d);}
+.value-item h4{font-size:17px;color:var(--navy-900);margin-bottom:8px;}
+.value-item p{font-size:13.5px;color:var(--slate-500);}
+@media(max-width:760px){.values-grid{grid-template-columns:repeat(2,1fr);}}
+
+.vision2040{background:var(--navy-900);border-radius:var(--radius-lg);padding:50px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.vision2040 .pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.vision2040 .pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 18px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;}
+.vision2040 .pillar svg{width:18px;height:18px;color:var(--gold-300);flex-shrink:0;}
+@media(max-width:860px){.vision2040{grid-template-columns:1fr;padding:32px;}}
+
+/* solutions page detail rows */
+.solution-detail{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding-block:56px;border-bottom:1px solid var(--line);}
+.solution-detail:last-child{border-bottom:none;}
+.solution-detail.rev{grid-template-columns:1.1fr .9fr;}
+.solution-detail.rev .sd-visual{order:2;}
+[dir="rtl"] .solution-detail.rev .sd-visual{order:0;}
+.sd-badge{display:inline-flex;align-items:center;gap:8px;background:var(--navy-900);color:var(--gold-300);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:700;margin-bottom:18px;}
+.sd-visual{background:linear-gradient(150deg,var(--navy-900),var(--navy-800));border-radius:var(--radius-lg);padding:34px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-2);}
+.sd-feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px;}
+.sd-feature{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 15px;font-size:13.5px;font-weight:600;color:var(--navy-800);}
+.sd-feature svg{width:16px;height:16px;color:var(--green-600);flex-shrink:0;}
+@media(max-width:900px){.solution-detail,.solution-detail.rev{grid-template-columns:1fr;}.solution-detail.rev .sd-visual{order:0;}}
+
+/* products */
+.product-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-1);transition:box-shadow .3s,transform .3s;}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2);}
+.product-shot{aspect-ratio:16/10;background:linear-gradient(135deg,var(--navy-900),var(--navy-700));padding:20px;}
+.product-body{padding:28px;}
+.product-body .tag{color:var(--green-600);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;}
+body.lang-ar .product-body .tag{letter-spacing:0;}
+.product-body h3{font-size:20px;color:var(--navy-900);margin:8px 0 10px;}
+.product-body p{color:var(--slate-500);font-size:14px;}
+.product-body ul{margin-top:16px;display:flex;flex-direction:column;gap:9px;}
+.product-body ul li{font-size:13.5px;display:flex;gap:9px;align-items:flex-start;color:var(--ink-700);}
+.product-body ul li svg{width:15px;height:15px;color:var(--green-600);flex-shrink:0;margin-top:2px;}
+.product-body .btn{margin-top:22px;width:100%;}
+
+/* industries */
+.industry-card{position:relative;border-radius:var(--radius-md);overflow:hidden;padding:32px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:linear-gradient(160deg,var(--navy-900),var(--navy-700));}
+.industry-card .icon-wrap{position:absolute;top:26px;inset-inline-start:26px;width:46px;height:46px;border-radius:10px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;}
+.industry-card .icon-wrap svg{color:var(--gold-300);}
+.industry-card h3{font-size:19px;margin-bottom:8px;}
+.industry-card p{font-size:13.5px;color:#c3cedb;}
+
+/* portfolio */
+.case-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-1);}
+.case-top{padding:26px 30px;background:var(--ivory-100);display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.case-top .pill{background:#fff;}
+.case-body{padding:30px;}
+.case-body h3{font-size:20px;color:var(--navy-900);margin-bottom:12px;}
+.case-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;}
+.case-col span{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-500);margin-bottom:6px;}
+body.lang-ar .case-col span{letter-spacing:0;}
+.case-col p{font-size:13.5px;color:var(--slate-500);}
+@media(max-width:760px){.case-row{grid-template-columns:1fr;}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start;}
+.contact-info-card{background:var(--navy-900);color:#fff;border-radius:var(--radius-lg);padding:38px;}
+.contact-info-card h3{font-size:20px;margin-bottom:20px;}
+.info-row{display:flex;gap:14px;padding-block:16px;border-top:1px solid rgba(255,255,255,.1);}
+.info-row:first-of-type{border-top:none;}
+.info-row .icon-wrap{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.info-row .icon-wrap svg{color:var(--gold-300);width:18px;height:18px;}
+.info-row b{display:block;font-size:14px;margin-bottom:3px;}
+.info-row span{font-size:13.5px;color:#b7c3d1;}
+.social-row{display:flex;gap:10px;margin-top:24px;}
+.social-row a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.social-row a:hover{background:var(--gold-500);}
+.social-row a svg{width:17px;height:17px;color:#fff;}
+.map-box{margin-top:20px;border-radius:14px;overflow:hidden;height:150px;}
+
+.contact-form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px;box-shadow:var(--shadow-1);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--navy-800);margin-bottom:7px;}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;background:var(--ivory-50);
+  transition:border-color .2s,background .2s;font-size:14.5px;color:var(--ink-900);
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold-500);background:#fff;outline:none;}
+.field textarea{resize:vertical;min-height:110px;}
+.form-note{font-size:12.5px;color:var(--slate-500);margin-top:14px;}
+.success-msg{display:none;align-items:center;gap:12px;background:#eef6f3;border:1px solid var(--green-500);color:var(--green-600);padding:16px 18px;border-radius:12px;font-weight:600;font-size:14px;margin-bottom:20px;}
+.success-msg.show{display:flex;}
+.success-msg svg{width:22px;height:22px;flex-shrink:0;}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+
+/* admin lock screen */
+.admin-lock{display:flex;justify-content:center;padding:40px 0 60px;}
+.admin-lock-box{max-width:380px;width:100%;text-align:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:44px 34px;box-shadow:var(--shadow-1);}
+.admin-lock-icon{width:56px;height:56px;border-radius:14px;background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.admin-lock-icon svg{width:26px;height:26px;color:var(--gold-300);}
+.admin-lock-box h3{font-size:19px;color:var(--navy-900);margin-bottom:8px;}
+.admin-lock-box p{font-size:13.5px;color:var(--slate-500);margin-bottom:22px;}
+.admin-lock-box input{width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:10px;background:var(--ivory-50);text-align:center;letter-spacing:.2em;font-size:15px;margin-bottom:14px;}
+.admin-lock-box input:focus{border-color:var(--gold-500);background:#fff;outline:none;}
+.admin-lock-box .btn{width:100%;}
+.admin-lock-error{display:none;color:#b3261e;font-size:12.5px;font-weight:600;margin-top:14px;margin-bottom:0;}
+.admin-lock-error.show{display:block;}
+
+/* admin / database */
+.admin-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
+.admin-toolbar-left{flex:1;min-width:220px;}
+.admin-toolbar-left input{width:100%;max-width:380px;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-size:14px;}
+.admin-toolbar-left input:focus{border-color:var(--gold-500);outline:none;}
+.admin-toolbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.storage-note{display:flex;align-items:center;gap:10px;background:var(--ivory-100);border:1px solid var(--line);color:var(--slate-500);font-size:13px;padding:12px 16px;border-radius:10px;margin-bottom:18px;}
+.storage-note svg{width:16px;height:16px;color:var(--gold-500);flex-shrink:0;}
+.storage-note.warn{background:#fff8ea;border-color:#f0ddb0;color:#8a6d1f;}
+.admin-table-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);overflow:auto;box-shadow:var(--shadow-1);}
+table.admin-table{width:100%;border-collapse:collapse;min-width:900px;}
+.admin-table th{text-align:start;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--slate-500);background:var(--ivory-100);padding:14px 16px;position:sticky;top:0;}
+body.lang-ar .admin-table th{letter-spacing:0;}
+.admin-table td{padding:14px 16px;font-size:13.5px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-700);}
+.admin-table td.msg-cell{max-width:220px;color:var(--slate-500);}
+.admin-table tr:hover td{background:var(--ivory-50);}
+.admin-table .row-tag{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:#eef6f3;color:var(--green-600);white-space:nowrap;}
+.admin-del{color:#b3261e;font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:8px;transition:background .2s;}
+.admin-del:hover{background:#fbeaea;}
+.admin-empty{display:none;flex-direction:column;align-items:center;gap:14px;padding:60px 20px;text-align:center;color:var(--slate-500);font-size:14px;}
+.admin-empty.show{display:flex;}
+#adminTable.hide{display:none;}
+
+/* footer */
+footer{background:var(--navy-950);color:#c3cedb;padding:70px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:36px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-grid h4{color:#fff;font-size:14px;margin-bottom:18px;}
+.footer-grid ul li{margin-bottom:11px;font-size:13.8px;}
+.footer-grid ul li a:hover{color:var(--gold-300);}
+.footer-brand p{font-size:13.8px;max-width:280px;margin-top:14px;color:#93a2b5;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-block:24px;font-size:12.8px;color:#7c8ba0;flex-wrap:wrap;gap:10px;}
+.admin-dot{width:6px;height:6px;border-radius:50%;background:#7c8ba0;opacity:.18;flex-shrink:0;transition:opacity .3s;}
+.admin-dot:hover{opacity:.55;}
+@media(max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+
+/* misc */
+.divider-fade{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin-block:0;}
+::selection{background:var(--gold-300);color:var(--navy-950);}
+.toast{position:fixed;bottom:26px;inset-inline-end:26px;background:var(--navy-900);color:#fff;padding:16px 22px;border-radius:12px;box-shadow:var(--shadow-2);font-size:14px;font-weight:600;z-index:900;display:flex;align-items:center;gap:10px;transform:translateY(120%);transition:transform .4s var(--ease);}
+.toast.show{transform:none;}
+.toast svg{width:18px;height:18px;color:var(--gold-300);}
+</style>
+</head>
+<body class="lang-en">
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+
+<header id="siteHeader">
+  <div class="container">
+    <a href="#home" class="brand" data-page-link="home">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="logo-draw" d="M6 17V7l12 10V7"/></svg></span>
+      <span class="brand-text"><b id="brandWord">NEXORA</b><span class="cap-anim" data-i18n="brand.caption">TECHNOLOGIES</span></span>
+    </a>
+    <nav class="mainnav" id="mainNav" aria-label="Primary"></nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button type="button" id="langEnBtn" onclick="setLang('en')">EN</button>
+        <button type="button" id="langArBtn" onclick="setLang('ar')">AR</button>
+      </div>
+      <button class="btn btn-gold btn-sm desktop-only" data-goto="contact" data-i18n="nav.cta">Request Demo</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mtop">
+    <span class="brand-text"><b class="lg-word">NEXORA</b></span>
+    <button aria-label="Close menu" id="mobileClose" style="color:#fff"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
+  </div>
+  <nav id="mobileNavLinks" aria-label="Mobile"></nav>
+  <div class="mcta">
+    <button class="btn btn-gold" data-goto="contact" data-i18n="nav.demo">Request Free Demo</button>
+    <button class="btn btn-outline" data-goto="contact" data-i18n="nav.consult">Request Consultation</button>
+  </div>
+</div>
+
+<main id="main">
+  <!-- ================= HOME ================= -->
+  <div class="page active" id="page-home">
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy reveal in">
+          <span class="pill" style="background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16)" data-i18n="home.hero.eyebrow">Oman &middot; Digital Technology Partner</span>
+          <h1 style="margin-top:20px" data-i18n="home.hero.title">Building Digital Futures Through <span class="gold-word">Innovation</span></h1>
+          <p class="lede" data-i18n="home.hero.subtitle">Nexora Technologies designs and builds school, healthcare, enterprise and AI platforms for the institutions shaping Oman's future — engineered locally, built to global standards.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-gold" data-goto="contact" data-i18n="home.hero.ctaDemo">Request Free Demo</button>
+            <button class="btn btn-outline" data-goto="contact" data-i18n="home.hero.ctaConsult">Request Consultation</button>
+          </div>
+          <div class="hero-tags">
+            <span class="hero-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6z"/></svg><span data-i18n="home.hero.tag1">Aligned with Oman Vision 2040</span></span>
+            <span class="hero-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span data-i18n="home.hero.tag2">24/7 Support</span></span>
+          </div>
+        </div>
+        <div class="hero-visual reveal in" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <g>
+              <polygon class="lattice-line" points="200,40 320,120 320,280 200,360 80,280 80,120"/>
+              <polygon class="lattice-line b" points="200,90 275,140 275,260 200,310 125,260 125,140"/>
+              <line class="lattice-line" x1="80" y1="120" x2="320" y2="280"/>
+              <line class="lattice-line b" x1="320" y1="120" x2="80" y2="280"/>
+              <line class="lattice-line" x1="200" y1="40" x2="200" y2="360"/>
+              <line class="lattice-line b" x1="125" y1="140" x2="275" y2="260"/>
+              <line class="lattice-line" x1="275" y1="140" x2="125" y2="260"/>
+              <circle class="lattice-node" cx="200" cy="40" r="4"/>
+              <circle class="lattice-node b" cx="320" cy="120" r="4"/>
+              <circle class="lattice-node c" cx="320" cy="280" r="4"/>
+              <circle class="lattice-node" cx="200" cy="360" r="4"/>
+              <circle class="lattice-node b" cx="80" cy="280" r="4"/>
+              <circle class="lattice-node c" cx="80" cy="120" r="4"/>
+              <circle class="lattice-node" cx="200" cy="200" r="5"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="h-eyebrow" data-i18n="home.intro.eyebrow">Company Overview</span>
+          <h2 class="display" data-i18n="home.intro.title">A local technology partner, built for national ambition</h2>
+          <p class="lede" data-i18n="home.intro.text">Founded in the Sultanate of Oman, Nexora Technologies partners with schools, hospitals, government entities and businesses to design digital systems that are secure, scalable and genuinely easy to use. We combine local understanding with global engineering practice.</p>
+        </div>
+        <div class="stats-row reveal">
+          <div class="stat-chip"><b>6</b><span data-i18n="home.intro.stat1">Core Solution Areas</span></div>
+          <div class="stat-chip"><b>AR / EN</b><span data-i18n="home.intro.stat2">Bilingual By Design</span></div>
+          <div class="stat-chip"><b>24/7</b><span data-i18n="home.intro.stat3">Dedicated Support</span></div>
+          <div class="stat-chip"><b>2040</b><span data-i18n="home.intro.stat4">Vision Aligned</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="h-eyebrow" data-i18n="home.solutions.eyebrow">Our Solutions</span>
+          <h2 class="display" data-i18n="home.solutions.title">Technology built around your institution</h2>
+          <p class="lede" data-i18n="home.solutions.text">From classrooms to hospital wards, government offices to trading floors — our platforms are engineered for the way you actually work.</p>
+        </div>
+        <div class="grid cols-3" id="homeSolutionsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="h-eyebrow" data-i18n="home.why.eyebrow">Why Nexora</span>
+          <h2 class="display" data-i18n="home.why.title">Engineered for trust, built for scale</h2>
+        </div>
+        <div class="why-grid reveal" id="whyGrid"></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h3 class="display" data-i18n="home.cta.title">Ready to build what's next for your institution?</h3>
+          <div class="actions">
+            <button class="btn btn-gold" data-goto="contact" data-i18n="home.hero.ctaDemo">Request Free Demo</button>
+            <button class="btn btn-outline" data-goto="contact" data-i18n="home.hero.ctaConsult">Request Consultation</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <div class="page" id="page-about">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="about.crumb">About Nexora</span>
+        <h1 data-i18n="about.title">Building Oman's digital institutions, together</h1>
+        <p data-i18n="about.subtitle">A Muscat-headquartered technology company committed to the Sultanate's knowledge economy.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="vm-grid reveal">
+          <div class="vm-card vision">
+            <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3 data-i18n="about.vision.title">Our Vision</h3>
+            <p data-i18n="about.vision.text">To be the leading technology partner shaping Oman's digital future — trusted equally by government, education, healthcare and enterprise.</p>
+          </div>
+          <div class="vm-card mission">
+            <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 11 18-8-8 18-2-8-8-2Z"/></svg></span>
+            <h3 data-i18n="about.mission.title">Our Mission</h3>
+            <p data-i18n="about.mission.text">We design and build digital systems that make institutions faster, safer and more connected — engineered in Oman, for Oman and beyond.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="h-eyebrow" data-i18n="about.values.eyebrow">Our Values</span>
+          <h2 class="display" data-i18n="about.values.title">What guides how we build</h2>
+        </div>
+        <div class="values-grid reveal" id="valuesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="vision2040 reveal">
+          <div>
+            <span class="h-eyebrow" style="color:var(--gold-300)" data-i18n="about.v2040.eyebrow">Oman Vision 2040</span>
+            <h2 class="display" style="color:#fff" data-i18n="about.v2040.title">Engineering the knowledge economy</h2>
+            <p style="color:#c3cedb;margin-top:14px" data-i18n="about.v2040.text">Nexora Technologies operates in direct alignment with Oman Vision 2040 — supporting the Sultanate's transition toward a diversified, knowledge-based economy. Our platforms accelerate digital transformation across the public and private sectors and help build the human capital Oman needs for a competitive, sustainable future.</p>
+          </div>
+          <div class="pillars" id="pillarsGrid"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= SOLUTIONS ================= -->
+  <div class="page" id="page-solutions">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="solutions.crumb">Our Solutions</span>
+        <h1 data-i18n="solutions.title">Purpose-built platforms for every institution</h1>
+        <p data-i18n="solutions.subtitle">Six solution areas, one engineering standard — secure, bilingual and ready to scale.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container" id="solutionDetailWrap"></div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="h-eyebrow" data-i18n="solutions.more.eyebrow">More Capabilities</span>
+          <h2 class="display" data-i18n="solutions.more.title">Enterprise, web and AI, engineered together</h2>
+        </div>
+        <div class="grid cols-3" id="moreSolutionsGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PRODUCTS ================= -->
+  <div class="page" id="page-products">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="products.crumb">Products</span>
+        <h1 data-i18n="products.title">The Nexora product suite</h1>
+        <p data-i18n="products.subtitle">Cloud-native SaaS platforms, ready to deploy for your institution.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="grid cols-2" id="productsGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= INDUSTRIES ================= -->
+  <div class="page" id="page-industries">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="industries.crumb">Industries</span>
+        <h1 data-i18n="industries.title">Sectors we serve across Oman</h1>
+        <p data-i18n="industries.subtitle">Tailored platforms for the institutions driving the Sultanate forward.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="grid cols-4" id="industriesGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PORTFOLIO ================= -->
+  <div class="page" id="page-portfolio">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="portfolio.crumb">Portfolio</span>
+        <h1 data-i18n="portfolio.title">Representative case studies</h1>
+        <p data-i18n="portfolio.subtitle">A look at how our platforms solve real institutional challenges.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="grid cols-1" style="display:flex;flex-direction:column;gap:24px" id="portfolioGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= CONTACT ================= -->
+  <div class="page" id="page-contact">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="contact.crumb">Contact</span>
+        <h1 data-i18n="contact.title">Let's build what's next</h1>
+        <p data-i18n="contact.subtitle">Tell us about your institution — we'll follow up within one business day.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info-card reveal">
+            <h3 data-i18n="contact.info.title">Get in touch</h3>
+            <div class="info-row">
+              <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-6.5 8-12a8 8 0 1 0-16 0c0 5.5 8 12 8 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><b data-i18n="contact.info.locLabel">Office</b><span data-i18n="contact.info.locValue">Muscat, Sultanate of Oman</span></div>
+            </div>
+            <div class="info-row">
+              <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <div><b data-i18n="contact.info.emailLabel">Email</b><span>info@nexoratech.om</span></div>
+            </div>
+            <div class="info-row">
+              <span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.9.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6.3 6.3l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg></span>
+              <div><b data-i18n="contact.info.phoneLabel">Phone</b><span>+968 24 000 000</span></div>
+            </div>
+            <div class="social-row">
+              <a href="#" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8.3 18.5H5.6V9.9h2.7v8.6ZM7 8.7a1.6 1.6 0 1 1 0-3.1 1.6 1.6 0 0 1 0 3.1Zm11.5 9.8h-2.7v-4.2c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.2-.1.4-.1.7v4.2h-2.7s.1-6.8 0-8.6h2.7v1.2c.4-.6 1-1.4 2.5-1.4 1.8 0 3.1 1.2 3.1 3.7v4.1Z"/></svg></a>
+              <a href="#" aria-label="X (Twitter)"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h4.6l4 5.4L16.4 3H21l-6.9 8.6L21.4 21h-4.6l-4.4-5.9L6.7 21H2l7.3-9.1L3 3Z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+            </div>
+            <div class="map-box" aria-hidden="true">
+              <svg viewBox="0 0 300 150" width="100%" height="100%" style="background:var(--navy-800)">
+                <path d="M20 100 Q80 40 150 70 T280 50" stroke="var(--gold-500)" stroke-width="2" fill="none" opacity=".7"/>
+                <circle cx="150" cy="70" r="6" fill="var(--gold-300)"/>
+                <circle cx="150" cy="70" r="12" fill="none" stroke="var(--gold-300)" stroke-width="1.5" opacity=".5"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="contact-form-card reveal">
+            <div class="success-msg" id="successMsg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span data-i18n="contact.form.success">Thank you — your message has been received. Our team will be in touch within one business day.</span>
+            </div>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="field">
+                  <label data-i18n="contact.form.name">Full Name</label>
+                  <input type="text" id="fieldName" required data-i18n-placeholder="contact.form.namePh" placeholder="Your name">
+                </div>
+                <div class="field">
+                  <label data-i18n="contact.form.email">Email Address</label>
+                  <input type="email" id="fieldEmail" required data-i18n-placeholder="contact.form.emailPh" placeholder="you@organization.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label data-i18n="contact.form.phone">Phone Number</label>
+                  <input type="tel" id="fieldPhone" data-i18n-placeholder="contact.form.phonePh" placeholder="+968 ...">
+                </div>
+                <div class="field">
+                  <label data-i18n="contact.form.org">Organization</label>
+                  <input type="text" id="fieldOrg" data-i18n-placeholder="contact.form.orgPh" placeholder="School, hospital, company...">
+                </div>
+              </div>
+              <div class="field">
+                <label data-i18n="contact.form.interest">I'm interested in</label>
+                <select id="interestSelect">
+                  <option value="demo" data-i18n="contact.form.optDemo">Requesting a free demo</option>
+                  <option value="consult" data-i18n="contact.form.optConsult">Requesting a consultation</option>
+                  <option value="general" data-i18n="contact.form.optGeneral">General inquiry</option>
+                  <option value="partnership" data-i18n="contact.form.optPartner">Partnership</option>
+                </select>
+              </div>
+              <div class="field">
+                <label data-i18n="contact.form.message">Message</label>
+                <textarea id="fieldMessage" required data-i18n-placeholder="contact.form.messagePh" placeholder="Tell us about your institution and needs..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold" style="width:100%" data-i18n="contact.form.submit">Send Message</button>
+              <p class="form-note" data-i18n="contact.form.note">By submitting, you agree to be contacted by Nexora Technologies regarding your inquiry.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ADMIN / LOCAL DATABASE (PROTECTED) ================= -->
+  <div class="page" id="page-admin">
+    <section class="page-banner">
+      <div class="container">
+        <span class="crumb" data-i18n="admin.crumb">Admin</span>
+        <h1 data-i18n="admin.title">Inquiries database</h1>
+        <p data-i18n="admin.subtitle">Every consultation and demo request submitted through this website, stored locally for this site.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <!-- LOCK SCREEN -->
+        <div class="admin-lock reveal in" id="adminLock">
+          <div class="admin-lock-box">
+            <span class="admin-lock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+            <h3 data-i18n="admin.lock.title">Restricted area</h3>
+            <p data-i18n="admin.lock.subtitle">This dashboard is for authorized staff only. Enter the access code to continue.</p>
+            <form id="adminLockForm">
+              <input type="password" id="adminPassInput" autocomplete="off" data-i18n-placeholder="admin.lock.placeholder" placeholder="Access code">
+              <button type="submit" class="btn btn-gold" data-i18n="admin.lock.submit">Unlock Dashboard</button>
+              <p class="admin-lock-error" id="adminLockError" data-i18n="admin.lock.error">Incorrect access code. Please try again.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- DASHBOARD CONTENT (hidden until unlocked) -->
+        <div id="adminContent" style="display:none">
+          <div class="admin-toolbar reveal in">
+            <div class="admin-toolbar-left">
+              <input type="text" id="adminSearch" data-i18n-placeholder="admin.searchPh" placeholder="Search by name, email or organization...">
+            </div>
+            <div class="admin-toolbar-right">
+              <span class="pill" id="adminCount">0</span>
+              <button class="btn btn-outline-dark btn-sm" id="adminRefresh" data-i18n="admin.refresh">Refresh</button>
+              <button class="btn btn-outline-dark btn-sm" id="adminExport" data-i18n="admin.export">Export CSV</button>
+              <button class="btn btn-sm" id="adminClear" style="background:#fbeaea;color:#b3261e" data-i18n="admin.clearAll">Clear all</button>
+              <button class="btn btn-outline-dark btn-sm" id="adminLogout" data-i18n="admin.lock.logout">Lock</button>
+            </div>
+          </div>
+          <div class="storage-note reveal in" id="storageNote"></div>
+          <div class="admin-table-wrap reveal in">
+            <table class="admin-table" id="adminTable">
+              <thead>
+                <tr>
+                  <th data-i18n="admin.col.date">Date</th>
+                  <th data-i18n="admin.col.name">Name</th>
+                  <th data-i18n="admin.col.email">Email</th>
+                  <th data-i18n="admin.col.phone">Phone</th>
+                  <th data-i18n="admin.col.org">Organization</th>
+                  <th data-i18n="admin.col.interest">Interest</th>
+                  <th data-i18n="admin.col.message">Message</th>
+                  <th data-i18n="admin.col.actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminTbody"></tbody>
+            </table>
+            <div class="admin-empty" id="adminEmpty">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:40px;height:40px;color:var(--slate-400);margin-inline:auto 0"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
+              <p data-i18n="admin.empty">No submissions yet. New consultation and demo requests will appear here automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text"><b class="lg-word" style="font-size:20px">NEXORA</b></span>
+        <p data-i18n="footer.blurb">Nexora Technologies designs school, healthcare, enterprise and AI platforms for institutions across Oman — aligned with Oman Vision 2040.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.pages">Company</h4>
+        <ul id="footerNav"></ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.solutionsTitle">Solutions</h4>
+        <ul id="footerSolutions"></ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.contactTitle">Contact</h4>
+        <ul>
+          <li data-i18n="contact.info.locValue">Muscat, Sultanate of Oman</li>
+          <li>info@nexoratech.om</li>
+          <li>+968 24 000 000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yearNow"></span> Nexora Technologies. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="footer.tagline">Building Digital Futures Through Innovation</span>
+      <a href="#admin" data-page-link="admin" class="admin-dot" aria-hidden="true" tabindex="-1"></a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span id="toastText"></span></div>
+
+<script>
+/* ============================================================
+   ICONS
+============================================================ */
+const ICON = (path,vb='0 0 24 24')=>`<svg class="icon" viewBox="${vb}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
+const I = {
+  school: ICON('<path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v7"/>'),
+  health: ICON('<path d="M20.8 4.6a5 5 0 0 0-7.1 0L12 6.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 20.4l8.8-8.7a5 5 0 0 0 0-7.1Z"/>'),
+  enterprise: ICON('<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/>'),
+  web: ICON('<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/>'),
+  transform: ICON('<path d="M17 2 21 6l-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22 3 18l4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>'),
+  ai: ICON('<rect x="5" y="7" width="14" height="12" rx="2"/><path d="M9 3v4M15 3v4M9 19v2M15 19v2M3 10h2M3 14h2M19 10h2M19 14h2"/><circle cx="9.5" cy="12.5" r="1"/><circle cx="14.5" cy="12.5" r="1"/>'),
+  shield: ICON('<path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/>'),
+  flag: ICON('<path d="M4 22V4"/><path d="M4 4h13l-2.5 3.5L17 11H4"/>'),
+  globe: ICON('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/>'),
+  clock: ICON('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>'),
+  check: ICON('<path d="m5 12 5 5L20 7"/>'),
+  users: ICON('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><circle cx="17.5" cy="9" r="2.8"/><path d="M15.5 14c2.7.4 4.5 2.5 4.5 6"/>'),
+  chart: ICON('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),
+  cal: ICON('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'),
+  fileHeart: ICON('<path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6Z"/><path d="M12 14.5s-2.5-1.7-2.5-3.5a1.5 1.5 0 0 1 2.5-1.1 1.5 1.5 0 0 1 2.5 1.1c0 1.8-2.5 3.5-2.5 3.5Z"/>'),
+  brain: ICON('<path d="M9 4a3 3 0 0 0-3 3v.3A3 3 0 0 0 4 10v1a3 3 0 0 0 1.5 2.6A3 3 0 0 0 8 17a3 3 0 0 0 3 3 3 3 0 0 0 1-.2"/><path d="M15 4a3 3 0 0 1 3 3v.3a3 3 0 0 1 2 2.7v1a3 3 0 0 1-1.5 2.6A3 3 0 0 1 16 17a3 3 0 0 1-3 3 3 3 0 0 1-1-.2"/><path d="M9 4a3 3 0 0 1 3 3v10"/>'),
+  gov: ICON('<path d="M3 21h18"/><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/>'),
+  building: ICON('<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h.01M15 8h.01M9 12h.01M15 12h.01M9 16h.01M15 16h.01"/>'),
+  arrow: ICON('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+  award: ICON('<circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/>'),
+  pin: ICON('<path d="M12 22s8-6.5 8-12a8 8 0 1 0-16 0c0 5.5 8 12 8 12Z"/><circle cx="12" cy="10" r="2.5"/>'),
+};
+
+/* ============================================================
+   CONTENT
+============================================================ */
+const NAVPAGES = ['home','about','solutions','products','industries','portfolio','contact'];
+const ALLPAGES = NAVPAGES.concat(['admin']);
+
+const T = {
+en:{
+  skip:'Skip to content',
+  brand:{caption:'TECHNOLOGIES'},
+  nav:{ home:'Home', about:'About Us', solutions:'Solutions', products:'Products', industries:'Industries', portfolio:'Portfolio', contact:'Contact', cta:'Request Demo', demo:'Request Free Demo', consult:'Request Consultation' },
+  home:{
+    hero:{eyebrow:"Oman &middot; Digital Technology Partner", title:'Building Digital Futures Through <span class="gold-word">Innovation</span>', subtitle:"Nexora Technologies designs and builds school, healthcare, enterprise and AI platforms for the institutions shaping Oman's future — engineered locally, built to global standards.", ctaDemo:'Request Free Demo', ctaConsult:'Request Consultation', tag1:'Aligned with Oman Vision 2040', tag2:'24/7 Support'},
+    intro:{eyebrow:'Company Overview', title:'A local technology partner, built for national ambition', text:'Founded in the Sultanate of Oman, Nexora Technologies partners with schools, hospitals, government entities and businesses to design digital systems that are secure, scalable and genuinely easy to use. We combine local understanding with global engineering practice.', stat1:'Core Solution Areas', stat2:'Bilingual By Design', stat3:'Dedicated Support', stat4:'Vision Aligned'},
+    solutions:{eyebrow:'Our Solutions', title:'Technology built around your institution', text:'From classrooms to hospital wards, government offices to trading floors — our platforms are engineered for the way you actually work.'},
+    why:{eyebrow:'Why Nexora', title:'Engineered for trust, built for scale'},
+    cta:{title:"Ready to build what's next for your institution?"}
+  },
+  about:{
+    crumb:'About Nexora', title:"Building Oman's digital institutions, together", subtitle:"A Muscat-headquartered technology company committed to the Sultanate's knowledge economy.",
+    vision:{title:'Our Vision', text:"To be the leading technology partner shaping Oman's digital future — trusted equally by government, education, healthcare and enterprise."},
+    mission:{title:'Our Mission', text:'We design and build digital systems that make institutions faster, safer and more connected — engineered in Oman, for Oman and beyond.'},
+    values:{eyebrow:'Our Values', title:'What guides how we build'},
+    v2040:{eyebrow:'Oman Vision 2040', title:'Engineering the knowledge economy', text:"Nexora Technologies operates in direct alignment with Oman Vision 2040 — supporting the Sultanate's transition toward a diversified, knowledge-based economy. Our platforms accelerate digital transformation across the public and private sectors and help build the human capital Oman needs for a competitive, sustainable future."}
+  },
+  solutions:{crumb:'Our Solutions', title:'Purpose-built platforms for every institution', subtitle:'Six solution areas, one engineering standard — secure, bilingual and ready to scale.', more:{eyebrow:'More Capabilities', title:'Enterprise, web and AI, engineered together'}},
+  products:{crumb:'Products', title:'The Nexora product suite', subtitle:'Cloud-native SaaS platforms, ready to deploy for your institution.'},
+  industries:{crumb:'Industries', title:'Sectors we serve across Oman', subtitle:'Tailored platforms for the institutions driving the Sultanate forward.'},
+  portfolio:{crumb:'Portfolio', title:'Representative case studies', subtitle:'A look at how our platforms solve real institutional challenges.'},
+  contact:{
+    crumb:'Contact', title:"Let's build what's next", subtitle:"Tell us about your institution — we'll follow up within one business day.",
+    info:{title:'Get in touch', locLabel:'Office', locValue:'Muscat, Sultanate of Oman', emailLabel:'Email', phoneLabel:'Phone'},
+    form:{name:'Full Name', namePh:'Your name', email:'Email Address', emailPh:'you@organization.com', phone:'Phone Number', phonePh:'+968 ...', org:'Organization', orgPh:'School, hospital, company...', interest:"I'm interested in", optDemo:'Requesting a free demo', optConsult:'Requesting a consultation', optGeneral:'General inquiry', optPartner:'Partnership', message:'Message', messagePh:'Tell us about your institution and needs...', submit:'Send Message', note:'By submitting, you agree to be contacted by Nexora Technologies regarding your inquiry.', success:'Thank you — your message has been received. Our team will be in touch within one business day.'}
+  },
+  admin:{crumb:'Admin', title:'Inquiries database', subtitle:'Every consultation and demo request submitted through this website, stored locally for this site.', searchPh:'Search by name, email or organization...', refresh:'Refresh', export:'Export CSV', clearAll:'Clear all', clearConfirm:'Delete all stored submissions? This cannot be undone.', deleteConfirm:'Delete this submission?', delete:'Delete', empty:'No submissions yet. New consultation and demo requests will appear here automatically.', storageOk:'Submissions are saved to this website local database and stay available across visits.', storageFallback:'Local database is unavailable in this environment right now, so submissions are only kept for this browser session.',
+    lock:{title:'Restricted area', subtitle:'This dashboard is for authorized staff only. Enter the access code to continue.', placeholder:'Access code', submit:'Unlock Dashboard', error:'Incorrect access code. Please try again.', logout:'Lock'},
+    col:{date:'Date', name:'Name', email:'Email', phone:'Phone', org:'Organization', interest:'Interest', message:'Message', actions:'Actions'},
+    interestLabel:{demo:'Free demo', consult:'Consultation', general:'General inquiry', partnership:'Partnership'}
+  },
+  footer:{blurb:'Nexora Technologies designs school, healthcare, enterprise and AI platforms for institutions across Oman — aligned with Oman Vision 2040.', pages:'Company', solutionsTitle:'Solutions', contactTitle:'Contact', rights:'All rights reserved.', tagline:'Building Digital Futures Through Innovation', admin:'Admin panel'},
+  toast:{demo:'Thanks! Scroll down to request your free demo.', consult:'Thanks! Scroll down to request a consultation.'}
+},
+ar:{
+  skip:'الانتقال إلى المحتوى',
+  brand:{caption:'للتقنية'},
+  nav:{ home:'الرئيسية', about:'من نحن', solutions:'حلولنا', products:'المنتجات', industries:'القطاعات', portfolio:'أعمالنا', contact:'تواصل معنا', cta:'اطلب عرضًا', demo:'طلب تجربة مجانية', consult:'طلب استشارة' },
+  home:{
+    hero:{eyebrow:'عمان &middot; شريك التقنية الرقمية', title:'نبني المستقبل الرقمي من خلال <span class="gold-word">الابتكار</span>', subtitle:'تصمم نيكسورا للتقنية وتبني منصات إدارة المدارس والرعاية الصحية والمؤسسات وحلول الذكاء الاصطناعي للمؤسسات التي تصنع مستقبل عمان، بهندسة محلية ومعايير عالمية.', ctaDemo:'طلب تجربة مجانية', ctaConsult:'طلب استشارة', tag1:'منسجمة مع رؤية عمان 2040', tag2:'دعم على مدار الساعة'},
+    intro:{eyebrow:'نبذة عن الشركة', title:'شريك تقني محلي، بطموح وطني', text:'تأسست نيكسورا للتقنية في سلطنة عمان، وتتشارك مع المدارس والمستشفيات والجهات الحكومية والشركات لتصميم أنظمة رقمية آمنة وقابلة للتوسع وسهلة الاستخدام فعليًا. نجمع بين الفهم المحلي وأفضل ممارسات الهندسة العالمية.', stat1:'مجالات حلول رئيسية', stat2:'ثنائي اللغة بالتصميم', stat3:'دعم متواصل', stat4:'منسجم مع الرؤية'},
+    solutions:{eyebrow:'حلولنا التقنية', title:'تقنية مصممة حول مؤسستك', text:'من الفصول الدراسية إلى أروقة المستشفيات، ومن المكاتب الحكومية إلى قاعات الأعمال، منصاتنا مصممة بما يتناسب مع طبيعة عملكم فعليًا.'},
+    why:{eyebrow:'لماذا Nexora', title:'مصممة لتكسب الثقة، ومبنية للنمو'},
+    cta:{title:'هل أنت مستعد لبناء ما هو قادم لمؤسستك؟'}
+  },
+  about:{
+    crumb:'عن نيكسورا', title:'نبني مؤسسات عمان الرقمية، معًا', subtitle:'شركة تقنية مقرها مسقط، ملتزمة باقتصاد المعرفة في السلطنة.',
+    vision:{title:'رؤيتنا', text:'أن نكون الشريك التقني الرائد في صياغة مستقبل عمان الرقمي، موثوقًا به من الحكومة والتعليم والصحة وقطاع الأعمال على حد سواء.'},
+    mission:{title:'رسالتنا', text:'نصمم ونبني أنظمة رقمية تجعل المؤسسات أسرع وأكثر أمانًا وترابطًا، بصناعة عمانية لعمان وخارجها.'},
+    values:{eyebrow:'قيمنا', title:'ما يوجه طريقة بنائنا'},
+    v2040:{eyebrow:'رؤية عمان 2040', title:'هندسة الاقتصاد المعرفي', text:'تعمل نيكسورا للتقنية بما يتماشى مباشرة مع رؤية عمان 2040، لدعم تحول السلطنة نحو اقتصاد معرفي متنوع. تُسرّع منصاتنا التحول الرقمي في القطاعين العام والخاص، وتساهم في بناء الكفاءات البشرية التي تحتاجها عمان لمستقبل تنافسي ومستدام.'}
+  },
+  solutions:{crumb:'حلولنا', title:'منصات مصممة خصيصًا لكل مؤسسة', subtitle:'ستة مجالات حلول، بمعيار هندسي واحد: آمن، ثنائي اللغة، وجاهز للتوسع.', more:{eyebrow:'قدرات إضافية', title:'حلول المؤسسات والويب والذكاء الاصطناعي، مجتمعة'}},
+  products:{crumb:'المنتجات', title:'منظومة منتجات Nexora', subtitle:'منصات سحابية جاهزة للتشغيل الفوري في مؤسستك.'},
+  industries:{crumb:'القطاعات', title:'القطاعات التي نخدمها في عمان', subtitle:'منصات مصممة خصيصًا للمؤسسات التي تقود السلطنة نحو المستقبل.'},
+  portfolio:{crumb:'أعمالنا', title:'نماذج من دراسات الحالة', subtitle:'نظرة على كيفية حل منصاتنا لتحديات مؤسسية حقيقية.'},
+  contact:{
+    crumb:'تواصل معنا', title:'لنبنِ ما هو قادم', subtitle:'أخبرنا عن مؤسستك، وسنتواصل معك خلال يوم عمل واحد.',
+    info:{title:'تواصل معنا', locLabel:'المكتب', locValue:'مسقط، سلطنة عمان', emailLabel:'البريد الإلكتروني', phoneLabel:'الهاتف'},
+    form:{name:'الاسم الكامل', namePh:'اسمك', email:'البريد الإلكتروني', emailPh:'you@organization.com', phone:'رقم الهاتف', phonePh:'+968 ...', org:'المؤسسة', orgPh:'مدرسة، مستشفى، شركة...', interest:'أنا مهتم بـ', optDemo:'طلب تجربة مجانية', optConsult:'طلب استشارة', optGeneral:'استفسار عام', optPartner:'شراكة', message:'الرسالة', messagePh:'أخبرنا عن مؤسستك واحتياجاتك...', submit:'إرسال الرسالة', note:'بالإرسال، فإنك توافق على أن تتواصل معك نيكسورا للتقنية بخصوص استفسارك.', success:'شكرًا لك، تم استلام رسالتك بنجاح. سيتواصل فريقنا معك خلال يوم عمل واحد.'}
+  },
+  admin:{crumb:'لوحة التحكم', title:'قاعدة بيانات الاستفسارات', subtitle:'جميع طلبات الاستشارة والتجربة المجانية المُرسلة عبر الموقع، محفوظة محليًا لهذا الموقع.', searchPh:'ابحث بالاسم أو البريد الإلكتروني أو المؤسسة...', refresh:'تحديث', export:'تصدير CSV', clearAll:'حذف الكل', clearConfirm:'هل تريد حذف جميع الطلبات المحفوظة؟ لا يمكن التراجع عن هذا الإجراء.', deleteConfirm:'هل تريد حذف هذا الطلب؟', delete:'حذف', empty:'لا توجد طلبات بعد. ستظهر هنا طلبات الاستشارة والتجربة المجانية الجديدة تلقائيًا.', storageOk:'يتم حفظ الطلبات في قاعدة البيانات المحلية لهذا الموقع، وتبقى متاحة عبر الزيارات.', storageFallback:'قاعدة البيانات المحلية غير متاحة حاليًا في هذه البيئة، لذا سيتم الاحتفاظ بالطلبات لهذه الجلسة فقط.',
+    lock:{title:'منطقة مقيدة', subtitle:'هذه اللوحة مخصصة للموظفين المصرح لهم فقط. أدخل رمز الدخول للمتابعة.', placeholder:'رمز الدخول', submit:'فتح اللوحة', error:'رمز الدخول غير صحيح. حاول مرة أخرى.', logout:'إغلاق'},
+    col:{date:'التاريخ', name:'الاسم', email:'البريد الإلكتروني', phone:'الهاتف', org:'المؤسسة', interest:'الاهتمام', message:'الرسالة', actions:'إجراءات'},
+    interestLabel:{demo:'تجربة مجانية', consult:'استشارة', general:'استفسار عام', partnership:'شراكة'}
+  },
+  footer:{blurb:'تصمم نيكسورا للتقنية منصات إدارة المدارس والرعاية الصحية والمؤسسات وحلول الذكاء الاصطناعي للمؤسسات في عمان، بما ينسجم مع رؤية عمان 2040.', pages:'الشركة', solutionsTitle:'الحلول', contactTitle:'تواصل', rights:'جميع الحقوق محفوظة.', tagline:'نبني المستقبل الرقمي من خلال الابتكار', admin:'لوحة التحكم'},
+  toast:{demo:'شكرًا! انتقل للأسفل لطلب تجربتك المجانية.', consult:'شكرًا! انتقل للأسفل لطلب استشارتك.'}
+}
+};
+
+/* solutions data (icon key + bilingual copy) */
+const SOLUTIONS = [
+  {icon:'school', en:{tag:'Education',title:'Smart School Management System',desc:'A unified digital platform connecting students, teachers and administrators — from admissions to graduation.',features:['Student Management','Teacher Management','Attendance Tracking','Exams & Grades','Fees & Reports']},
+   ar:{tag:'التعليم',title:'نظام إدارة المدارس الذكي',desc:'منصة رقمية متكاملة تربط الطلاب والمعلمين والإداريين، من القبول حتى التخرج.',features:['إدارة الطلاب','إدارة المعلمين','الحضور والغياب','الاختبارات والدرجات','الرسوم والتقارير']}},
+  {icon:'health', en:{tag:'Healthcare',title:'Healthcare Management System',desc:'Streamlined care delivery for hospitals and clinics — from patient intake to records and analytics.',features:['Patient Management','Appointments','Electronic Medical Records','Reports & Analytics']},
+   ar:{tag:'الرعاية الصحية',title:'نظام إدارة المستشفيات والمراكز الصحية',desc:'منظومة متكاملة لإدارة الرعاية الصحية بكفاءة، من استقبال المريض إلى الملفات الطبية والتقارير.',features:['إدارة المرضى','المواعيد','الملفات الطبية الإلكترونية','التقارير والتحليلات']}},
+  {icon:'enterprise', en:{tag:'Enterprise',title:'Enterprise Software Solutions',desc:'Custom ERP, HR and operations platforms built around how your organization actually works.',features:['Process Automation','HR & Payroll','Resource Planning','Custom Workflows']},
+   ar:{tag:'المؤسسات',title:'حلول برمجيات المؤسسات',desc:'أنظمة تخطيط موارد وموارد بشرية وعمليات مصممة خصيصًا لطبيعة عمل مؤسستك.',features:['أتمتة العمليات','الموارد البشرية والرواتب','تخطيط الموارد','سير عمل مخصص']}},
+  {icon:'web', en:{tag:'Web',title:'Web Applications',desc:'Fast, secure and scalable web platforms engineered for growth — from customer portals to internal tools.',features:['Custom Development','API Integrations','Cloud-Native Architecture','Responsive Design']},
+   ar:{tag:'الويب',title:'تطبيقات الويب',desc:'منصات ويب سريعة وآمنة وقابلة للتوسع، من بوابات العملاء إلى الأدوات الداخلية.',features:['تطوير مخصص','تكامل الأنظمة','بنية سحابية','تصميم متجاوب']}},
+  {icon:'transform', en:{tag:'Transformation',title:'Digital Transformation',desc:'End-to-end modernization roadmaps that turn manual processes into connected digital experiences.',features:['Process Digitization','Legacy Modernization','Change Management','Data Strategy']},
+   ar:{tag:'التحول الرقمي',title:'التحول الرقمي',desc:'خارطة طريق متكاملة لتحويل العمليات اليدوية إلى تجارب رقمية متصلة.',features:['رقمنة العمليات','تحديث الأنظمة القديمة','إدارة التغيير','استراتيجية البيانات']}},
+  {icon:'ai', en:{tag:'Artificial Intelligence',title:'Artificial Intelligence Solutions',desc:'Practical AI — from predictive analytics to intelligent automation — built for measurable impact.',features:['Predictive Analytics','Intelligent Automation','Natural Language Processing','Computer Vision']},
+   ar:{tag:'الذكاء الاصطناعي',title:'حلول الذكاء الاصطناعي',desc:'ذكاء اصطناعي عملي، من التحليلات التنبؤية إلى الأتمتة الذكية، بأثر قابل للقياس.',features:['التحليلات التنبؤية','الأتمتة الذكية','معالجة اللغة الطبيعية','الرؤية الحاسوبية']}}
+];
+
+const WHY = [
+  {icon:'flag', en:{title:'Rooted in Oman, Built for 2040', text:"Every platform is designed in service of the Sultanate's knowledge-economy goals."}, ar:{title:'متجذرون في عُمان، لرؤية 2040', text:'كل منصة نبنيها مصممة لخدمة أهداف الاقتصاد المعرفي للسلطنة.'}},
+  {icon:'shield', en:{title:'Enterprise-Grade Security', text:'Data protection and access control built to standards government and healthcare demand.'}, ar:{title:'أمان بمستوى المؤسسات', text:'حماية بيانات وضوابط وصول بمعايير تلبي متطلبات الحكومة والقطاع الصحي.'}},
+  {icon:'globe', en:{title:'Local Expertise, Global Standards', text:'Omani market knowledge combined with international engineering practice.'}, ar:{title:'خبرة محلية بمعايير عالمية', text:'معرفة عميقة بالسوق العماني إلى جانب أفضل الممارسات الهندسية الدولية.'}},
+  {icon:'clock', en:{title:'Dedicated Support & Training', text:'Our team stays with you post-launch, with training for every user level.'}, ar:{title:'دعم وتدريب مخصص', text:'يبقى فريقنا معكم بعد الإطلاق، مع تدريب لكل مستويات المستخدمين.'}}
+];
+
+const VALUES = [
+  {en:{title:'Innovation', text:'We build forward, not just to spec.'}, ar:{title:'الابتكار', text:'نبني للمستقبل، لا لتلبية المتطلبات فقط.'}},
+  {en:{title:'Integrity', text:'Transparent delivery, honest timelines.'}, ar:{title:'النزاهة', text:'تسليم شفاف وجداول زمنية صادقة.'}},
+  {en:{title:'Excellence', text:'Engineering quality that earns trust.'}, ar:{title:'التميز', text:'جودة هندسية تكسب الثقة.'}},
+  {en:{title:'Partnership', text:'We grow alongside every client we serve.'}, ar:{title:'الشراكة', text:'ننمو جنبًا إلى جنب مع كل عميل نخدمه.'}}
+];
+
+const PILLARS = [
+  {en:'Digital Transformation', ar:'التحول الرقمي'},
+  {en:'Innovation', ar:'الابتكار'},
+  {en:'Knowledge Economy', ar:'الاقتصاد المعرفي'},
+  {en:"Oman's Tech Development", ar:'تطوير التقنية في عمان'}
+];
+
+const PRODUCTS = [
+  {icon:'school', en:{title:'Nexora School Cloud',desc:'A complete SaaS platform for private and public schools of every size.',features:['Admissions & student records','Teacher & timetable management','Attendance & behaviour tracking','Exams, grades & report cards','Parent communication portal']},
+   ar:{title:'Nexora School Cloud',desc:'منصة سحابية متكاملة للمدارس الخاصة والحكومية بمختلف أحجامها.',features:['القبول وسجلات الطلاب','إدارة المعلمين والجداول','الحضور ومتابعة السلوك','الاختبارات والدرجات وكشوف الأداء','بوابة تواصل أولياء الأمور']}},
+  {icon:'health', en:{title:'Nexora Health Cloud',desc:'A modern hospital and clinic operating system built for patient-first care.',features:['Patient records & history','Appointment scheduling','Electronic medical records','Billing & insurance workflows','Operational analytics']},
+   ar:{title:'Nexora Health Cloud',desc:'نظام تشغيل حديث للمستشفيات والعيادات، مصمم ليضع المريض أولًا.',features:['سجلات وتاريخ المرضى','جدولة المواعيد','الملفات الطبية الإلكترونية','الفوترة وإجراءات التأمين','تحليلات تشغيلية']}},
+  {icon:'enterprise', en:{title:'Nexora Enterprise Suite',desc:'ERP, HR and finance tools that unify how large organizations operate.',features:['Finance & procurement','HR & payroll','Inventory & assets','Custom approval workflows','Role-based dashboards']},
+   ar:{title:'Nexora Enterprise Suite',desc:'أدوات تخطيط موارد وموارد بشرية ومالية توحّد طريقة عمل المؤسسات الكبرى.',features:['المالية والمشتريات','الموارد البشرية والرواتب','المخزون والأصول','مسارات اعتماد مخصصة','لوحات تحكم حسب الصلاحيات']}},
+  {icon:'ai', en:{title:'Nexora AI Suite',desc:'Applied AI modules that plug into any Nexora platform for smarter decisions.',features:['Predictive analytics dashboards','Intelligent process automation','Document & text intelligence','Conversational assistants']},
+   ar:{title:'Nexora AI Suite',desc:'وحدات ذكاء اصطناعي تطبيقية تتكامل مع أي منصة من منصات Nexora لدعم قرارات أذكى.',features:['لوحات تحليلات تنبؤية','أتمتة ذكية للعمليات','ذكاء المستندات والنصوص','مساعدات محادثة ذكية']}}
+];
+
+const INDUSTRIES = [
+  {icon:'school', en:{title:'Education', text:'From K-12 schools to higher-education institutions.'}, ar:{title:'التعليم', text:'من مدارس التعليم العام إلى مؤسسات التعليم العالي.'}},
+  {icon:'health', en:{title:'Healthcare', text:'Hospitals, clinics and specialised care providers.'}, ar:{title:'الرعاية الصحية', text:'المستشفيات والعيادات ومقدمو الرعاية المتخصصة.'}},
+  {icon:'gov', en:{title:'Government', text:'Digital services and case management for public entities.'}, ar:{title:'الحكومة', text:'خدمات رقمية وإدارة معاملات للجهات الحكومية.'}},
+  {icon:'building', en:{title:'Enterprises', text:'Operations, HR and finance systems for growing businesses.'}, ar:{title:'الشركات', text:'أنظمة العمليات والموارد البشرية والمالية للشركات النامية.'}}
+];
+
+const CASES = [
+  {tag:{en:'Education',ar:'التعليم'}, en:{title:'School Management Platform',challenge:'A multi-branch private school network needed one system to unify enrolment, attendance and parent communication across campuses.',solution:'Deployed Nexora School Cloud with role-based access for each campus, real-time attendance and a bilingual parent portal.',impact:'Unified reporting across branches and faster, clearer communication with families.'},
+   ar:{title:'منصة إدارة المدارس',challenge:'احتاجت شبكة مدارس خاصة متعددة الفروع إلى نظام واحد لتوحيد التسجيل والحضور والتواصل مع أولياء الأمور عبر جميع الفروع.',solution:'تم تطبيق Nexora School Cloud بصلاحيات مخصصة لكل فرع، وحضور فوري، وبوابة أولياء أمور ثنائية اللغة.',impact:'تقارير موحدة عبر الفروع وتواصل أسرع وأوضح مع الأسر.'}},
+  {tag:{en:'Enterprise',ar:'المؤسسات'}, en:{title:'Business Management System',challenge:'A regional trading company was managing procurement, inventory and approvals across disconnected spreadsheets.',solution:'Delivered a Nexora Enterprise Suite deployment with automated approval workflows and live inventory tracking.',impact:'Faster approvals and a single source of truth for operations.'},
+   ar:{title:'نظام إدارة الأعمال',challenge:'كانت شركة تجارية إقليمية تدير المشتريات والمخزون والاعتمادات عبر جداول بيانات منفصلة.',solution:'تم تطبيق Nexora Enterprise Suite بمسارات اعتماد آلية ومتابعة مخزون مباشرة.',impact:'اعتمادات أسرع ومصدر بيانات موحد للعمليات.'}},
+  {tag:{en:'Government',ar:'الحكومة'}, en:{title:'Custom Web Application',challenge:'A public-facing service portal needed to handle citizen requests securely and in both Arabic and English.',solution:'Built a custom, cloud-native web application with full RTL/LTR support and secure request tracking.',impact:'A single accessible channel for citizen services in both languages.'},
+   ar:{title:'تطبيق ويب مخصص',challenge:'احتاجت بوابة خدمات موجهة للمواطنين إلى معالجة الطلبات بأمان وباللغتين العربية والإنجليزية.',solution:'تم بناء تطبيق ويب سحابي مخصص بدعم كامل للاتجاهين مع تتبع آمن للطلبات.',impact:'قناة واحدة يسهل الوصول إليها لخدمات المواطنين باللغتين.'}}
+];
+
+/* ============================================================
+   RENDER HELPERS
+============================================================ */
+let lang = 'en';
+
+function featPill(text){ return `<li>${I.check}<span>${text}</span></li>`; }
+
+function renderNav(){
+  const linksHTML = NAVPAGES.map(p=>`<a href="#${p}" data-page-link="${p}">${T[lang].nav[p]}</a>`).join('');
+  document.getElementById('mainNav').innerHTML = linksHTML;
+  document.getElementById('mobileNavLinks').innerHTML = linksHTML;
+  document.querySelector('[data-goto="contact"].desktop-only').textContent = T[lang].nav.cta;
+  document.querySelectorAll('#mobileNav .mcta button')[0].textContent = T[lang].nav.demo;
+  document.querySelectorAll('#mobileNav .mcta button')[1].textContent = T[lang].nav.consult;
+  const footerLinks = NAVPAGES.filter(p=>p!=='home').map(p=>`<li><a href="#${p}" data-page-link="${p}">${T[lang].nav[p]}</a></li>`).join('');
+  document.getElementById('footerNav').innerHTML = `<li><a href="#home" data-page-link="home">${T[lang].nav.home}</a></li>` + footerLinks;
+  document.getElementById('footerSolutions').innerHTML = SOLUTIONS.map(s=>`<li><a href="#solutions" data-page-link="solutions">${s[lang].title}</a></li>`).join('');
+}
+
+function renderHomeSolutions(){
+  document.getElementById('homeSolutionsGrid').innerHTML = SOLUTIONS.map(s=>`
+    <div class="card reveal in">
+      <div class="icon-wrap">${I[s.icon]}</div>
+      <span class="pill" style="margin-bottom:10px">${s[lang].tag}</span>
+      <h3>${s[lang].title}</h3>
+      <p>${s[lang].desc}</p>
+      <ul class="feat-list">${s[lang].features.slice(0,3).map(f=>`<li>${I.check}${f}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+function renderWhy(){
+  document.getElementById('whyGrid').innerHTML = WHY.map(w=>`
+    <div class="why-item">
+      <div class="icon-wrap">${I[w.icon]}</div>
+      <h3>${w[lang].title}</h3>
+      <p>${w[lang].text}</p>
+    </div>`).join('');
+}
+
+function renderValues(){
+  document.getElementById('valuesGrid').innerHTML = VALUES.map((v,i)=>`
+    <div class="value-item reveal in">
+      <div class="num">0${i+1}</div>
+      <h4>${v[lang].title}</h4>
+      <p>${v[lang].text}</p>
+    </div>`).join('');
+}
+
+function renderPillars(){
+  document.getElementById('pillarsGrid').innerHTML = PILLARS.map(p=>`<div class="pillar">${I.check}<span>${p[lang]}</span></div>`).join('');
+}
+
+function renderSolutionsPage(){
+  const main2 = SOLUTIONS.slice(0,2);
+  const rest = SOLUTIONS.slice(2);
+  document.getElementById('solutionDetailWrap').innerHTML = main2.map((s,i)=>`
+    <div class="solution-detail ${i%2? 'rev':''} reveal in">
+      <div class="sd-copy">
+        <span class="sd-badge">${I[s.icon]}${s[lang].tag}</span>
+        <h2 class="display" style="font-size:28px;color:var(--navy-900)">${s[lang].title}</h2>
+        <p class="lede">${s[lang].desc}</p>
+        <div class="sd-feature-grid">${s[lang].features.map(f=>`<div class="sd-feature">${I.check}${f}</div>`).join('')}</div>
+      </div>
+      <div class="sd-visual">${I[s.icon].replace('icon','icon-lg').replace('width:22px;height:22px','width:64px;height:64px')}</div>
+    </div>`).join('');
+  document.getElementById('moreSolutionsGrid').innerHTML = rest.map(s=>`
+    <div class="card reveal in">
+      <div class="icon-wrap">${I[s.icon]}</div>
+      <span class="pill" style="margin-bottom:10px">${s[lang].tag}</span>
+      <h3>${s[lang].title}</h3>
+      <p>${s[lang].desc}</p>
+      <ul class="feat-list">${s[lang].features.map(f=>`<li>${I.check}${f}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+function productShotSVG(icon){
+  return `<svg viewBox="0 0 400 250" width="100%" height="100%">
+    <rect x="0" y="0" width="400" height="250" fill="none"/>
+    <rect x="20" y="20" width="360" height="30" rx="6" fill="rgba(255,255,255,.08)"/>
+    <circle cx="36" cy="35" r="4" fill="#e6c977"/><circle cx="50" cy="35" r="4" fill="#8798a9"/><circle cx="64" cy="35" r="4" fill="#8798a9"/>
+    <rect x="20" y="64" width="160" height="80" rx="8" fill="rgba(255,255,255,.08)"/>
+    <rect x="192" y="64" width="188" height="38" rx="8" fill="rgba(230,201,119,.22)"/>
+    <rect x="192" y="110" width="188" height="34" rx="8" fill="rgba(255,255,255,.08)"/>
+    <rect x="20" y="156" width="360" height="70" rx="8" fill="rgba(255,255,255,.06)"/>
+    <foreignObject x="30" y="86" width="36" height="36"></foreignObject>
+  </svg>`;
+}
+
+function renderProducts(){
+  document.getElementById('productsGrid').innerHTML = PRODUCTS.map(p=>`
+    <div class="product-card reveal in">
+      <div class="product-shot" style="display:flex;align-items:center;justify-content:center;position:relative;">
+        <div style="position:absolute;inset-inline-start:20px;top:20px;width:44px;height:44px;border-radius:10px;background:rgba(230,201,119,.18);display:flex;align-items:center;justify-content:center;color:#e6c977">${I[p.icon]}</div>
+        ${productShotSVG(p.icon)}
+      </div>
+      <div class="product-body">
+        <span class="tag">SaaS Platform</span>
+        <h3>${p[lang].title}</h3>
+        <p>${p[lang].desc}</p>
+        <ul>${p[lang].features.map(f=>`<li>${I.check}<span>${f}</span></li>`).join('')}</ul>
+        <button class="btn btn-gold" data-goto="contact">${T[lang].nav.demo}</button>
+      </div>
+    </div>`).join('');
+}
+
+function renderIndustries(){
+  document.getElementById('industriesGrid').innerHTML = INDUSTRIES.map(ind=>`
+    <div class="industry-card reveal in">
+      <div class="icon-wrap">${I[ind.icon]}</div>
+      <h3>${ind[lang].title}</h3>
+      <p>${ind[lang].text}</p>
+    </div>`).join('');
+}
+
+function renderPortfolio(){
+  const L = lang==='en' ? {ch:'Challenge',so:'Solution',im:'Impact'} : {ch:'التحدي',so:'الحل',im:'الأثر'};
+  document.getElementById('portfolioGrid').innerHTML = CASES.map(c=>`
+    <div class="case-card reveal in">
+      <div class="case-top">
+        <span class="pill">${c.tag[lang]}</span>
+      </div>
+      <div class="case-body">
+        <h3>${c[lang].title}</h3>
+        <div class="case-row">
+          <div class="case-col"><span>${L.ch}</span><p>${c[lang].challenge}</p></div>
+          <div class="case-col"><span>${L.so}</span><p>${c[lang].solution}</p></div>
+          <div class="case-col"><span>${L.im}</span><p>${c[lang].impact}</p></div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function applyStaticI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const path = el.getAttribute('data-i18n').split('.');
+    let val = T[lang];
+    for(const k of path){ val = val && val[k]; }
+    if(val!==undefined) el.innerHTML = val;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const path = el.getAttribute('data-i18n-placeholder').split('.');
+    let val = T[lang];
+    for(const k of path){ val = val && val[k]; }
+    if(val!==undefined) el.setAttribute('placeholder', val);
+  });
+  document.title = lang==='en' ? "Nexora Technologies | Building Digital Futures Through Innovation" : "نيكسورا للتقنية | نبني المستقبل الرقمي من خلال الابتكار";
+}
+
+function renderAll(){
+  applyStaticI18n();
+  renderNav();
+  renderHomeSolutions();
+  renderWhy();
+  renderValues();
+  renderPillars();
+  renderSolutionsPage();
+  renderProducts();
+  renderIndustries();
+  renderPortfolio();
+  highlightActiveNav();
+  observeReveals();
+  if(document.getElementById('page-admin') && document.getElementById('page-admin').classList.contains('active')){
+    renderAdminTable(document.getElementById('adminSearch') ? document.getElementById('adminSearch').value : '');
+    renderStorageNote();
+  }
+}
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.documentElement.dir = l==='ar' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('lang-ar', l==='ar');
+  document.body.classList.toggle('lang-en', l==='en');
+  document.getElementById('langEnBtn').classList.toggle('active', l==='en');
+  document.getElementById('langArBtn').classList.toggle('active', l==='ar');
+  renderAll();
+}
+
+/* ============================================================
+   ROUTER
+============================================================ */
+function showPage(name){
+  if(!ALLPAGES.includes(name)) name = 'home';
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const target = document.getElementById('page-'+name);
+  if(target) target.classList.add('active');
+  highlightActiveNav();
+  window.scrollTo({top:0,behavior:'auto'});
+  closeMobileNav();
+  observeReveals();
+  if(name==='admin'){ updateAdminGate(); if(adminUnlocked) loadSubmissions(); }
+}
+
+function highlightActiveNav(){
+  const current = (location.hash||'#home').replace('#','');
+  document.querySelectorAll('[data-page-link]').forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('data-page-link')===current || (current==='' && a.getAttribute('data-page-link')==='home'));
+  });
+}
+
+window.addEventListener('hashchange', ()=>showPage((location.hash||'#home').replace('#','')));
+
+document.addEventListener('click', (e)=>{
+  const gotoEl = e.target.closest('[data-goto]');
+  if(gotoEl){ location.hash = gotoEl.getAttribute('data-goto'); }
+});
+
+/* ============================================================
+   MOBILE NAV
+============================================================ */
+const mobileNav = document.getElementById('mobileNav');
+function openMobileNav(){ mobileNav.classList.add('open'); document.getElementById('menuToggle').setAttribute('aria-expanded','true'); }
+function closeMobileNav(){ mobileNav.classList.remove('open'); document.getElementById('menuToggle').setAttribute('aria-expanded','false'); }
+document.getElementById('menuToggle').addEventListener('click', openMobileNav);
+document.getElementById('mobileClose').addEventListener('click', closeMobileNav);
+
+/* ============================================================
+   HEADER SCROLL STATE
+============================================================ */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', ()=>{ header.classList.toggle('scrolled', window.scrollY>10); });
+
+/* ============================================================
+   HIDDEN ADMIN SHORTCUT (Ctrl/Cmd + Alt + A)
+============================================================ */
+document.addEventListener('keydown', (e)=>{
+  if((e.ctrlKey||e.metaKey) && e.altKey && (e.key==='a' || e.key==='A')){
+    e.preventDefault();
+    location.hash = 'admin';
+  }
+});
+
+/* ============================================================
+   REVEAL ON SCROLL
+============================================================ */
+let observer;
+function observeReveals(){
+  if(observer) observer.disconnect();
+  observer = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); observer.unobserve(en.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.page.active .reveal').forEach(el=>observer.observe(el));
+}
+
+/* ============================================================
+   ADMIN ACCESS GATE
+   NOTE: this is a simple front-end access code, suitable for keeping
+   the dashboard out of casual view. It is NOT real security — anyone
+   who reads the page source can find this value. For a production
+   deployment, protect this page with real server-side authentication.
+============================================================ */
+const ADMIN_PASSCODE = 'Nexora#2040';
+let adminUnlocked = false;
+
+function updateAdminGate(){
+  const lock = document.getElementById('adminLock');
+  const content = document.getElementById('adminContent');
+  if(!lock || !content) return;
+  lock.style.display = adminUnlocked ? 'none' : 'flex';
+  content.style.display = adminUnlocked ? 'block' : 'none';
+}
+
+document.getElementById('adminLockForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const val = document.getElementById('adminPassInput').value.trim();
+  const errEl = document.getElementById('adminLockError');
+  if(val === ADMIN_PASSCODE){
+    adminUnlocked = true;
+    errEl.classList.remove('show');
+    document.getElementById('adminPassInput').value = '';
+    updateAdminGate();
+    loadSubmissions();
+  }else{
+    errEl.classList.add('show');
+  }
+});
+
+document.getElementById('adminLogout').addEventListener('click', function(){
+  adminUnlocked = false;
+  updateAdminGate();
+});
+
+/* ============================================================
+   LOCAL DATABASE (window.storage-backed, with in-memory fallback)
+============================================================ */
+const DB_PREFIX = 'submissions:';
+let storageAvailable = true;
+let memoryDB = []; // fallback store used only if window.storage is unavailable
+let submissionsCache = [];
+
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+
+async function dbSave(record){
+  const key = DB_PREFIX + record.id;
+  try{
+    if(!window.storage) throw new Error('no storage api');
+    const res = await window.storage.set(key, JSON.stringify(record), true);
+    if(!res) throw new Error('write failed');
+    storageAvailable = true;
+  }catch(err){
+    storageAvailable = false;
+    memoryDB.push(record);
+  }
+}
+
+async function dbLoadAll(){
+  const records = [];
+  try{
+    if(!window.storage) throw new Error('no storage api');
+    const listRes = await window.storage.list(DB_PREFIX, true);
+    const keys = (listRes && listRes.keys) || [];
+    for(const k of keys){
+      try{
+        const got = await window.storage.get(k, true);
+        if(got && got.value){ records.push(JSON.parse(got.value)); }
+      }catch(_){ /* skip unreadable key */ }
+    }
+    storageAvailable = true;
+  }catch(err){
+    storageAvailable = false;
+  }
+  // always merge in this-session fallback records (covers unavailable-storage case)
+  const merged = records.concat(memoryDB.filter(m=>!records.some(r=>r.id===m.id)));
+  merged.sort((a,b)=> b.createdAt - a.createdAt);
+  return merged;
+}
+
+async function dbDelete(id){
+  try{
+    if(window.storage) await window.storage.delete(DB_PREFIX + id, true);
+  }catch(_){ /* ignore */ }
+  memoryDB = memoryDB.filter(m=>m.id!==id);
+}
+
+async function dbClearAll(){
+  for(const rec of submissionsCache){ await dbDelete(rec.id); }
+  memoryDB = [];
+}
+
+function interestLabel(val){
+  return (T[lang].admin.interestLabel && T[lang].admin.interestLabel[val]) || val;
+}
+
+async function loadSubmissions(){
+  submissionsCache = await dbLoadAll();
+  renderAdminTable(document.getElementById('adminSearch') ? document.getElementById('adminSearch').value : '');
+  renderStorageNote();
+}
+
+function renderStorageNote(){
+  const note = document.getElementById('storageNote');
+  if(!note) return;
+  note.classList.toggle('warn', !storageAvailable);
+  note.innerHTML = `${I.shield}<span>${storageAvailable ? T[lang].admin.storageOk : T[lang].admin.storageFallback}</span>`;
+}
+
+function renderAdminTable(filterText){
+  const tbody = document.getElementById('adminTbody');
+  const table = document.getElementById('adminTable');
+  const empty = document.getElementById('adminEmpty');
+  const countEl = document.getElementById('adminCount');
+  if(!tbody) return;
+  const q = (filterText||'').trim().toLowerCase();
+  const rows = submissionsCache.filter(r=>{
+    if(!q) return true;
+    return [r.name,r.email,r.org].some(v=> (v||'').toLowerCase().includes(q));
+  });
+  countEl.textContent = submissionsCache.length;
+  if(rows.length===0){
+    table.classList.add('hide');
+    empty.classList.add('show');
+    tbody.innerHTML='';
+    return;
+  }
+  table.classList.remove('hide');
+  empty.classList.remove('show');
+  tbody.innerHTML = rows.map(r=>{
+    const d = new Date(r.createdAt);
+    const dateStr = d.toLocaleDateString(lang==='ar' ? 'ar-OM' : 'en-GB', {year:'numeric',month:'short',day:'numeric'});
+    return `<tr>
+      <td>${dateStr}</td>
+      <td>${escapeHtml(r.name)}</td>
+      <td>${escapeHtml(r.email)}</td>
+      <td>${escapeHtml(r.phone||'—')}</td>
+      <td>${escapeHtml(r.org||'—')}</td>
+      <td><span class="row-tag">${interestLabel(r.interest)}</span></td>
+      <td class="msg-cell">${escapeHtml(r.message)}</td>
+      <td><button class="admin-del" data-del="${r.id}">${T[lang].admin.delete}</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function escapeHtml(str){
+  return String(str||'').replace(/[&<>"']/g, s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+
+function exportSubmissionsCSV(){
+  const headers = ['Date','Name','Email','Phone','Organization','Interest','Message'];
+  const lines = [headers.join(',')];
+  submissionsCache.forEach(r=>{
+    const d = new Date(r.createdAt).toISOString();
+    const row = [d, r.name, r.email, r.phone||'', r.org||'', interestLabel(r.interest), r.message]
+      .map(v=> `"${String(v||'').replace(/"/g,'""')}"`).join(',');
+    lines.push(row);
+  });
+  const blob = new Blob(['\ufeff'+lines.join('\n')], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'nexora-submissions.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('adminSearch') && document.getElementById('adminSearch').addEventListener('input', (e)=>renderAdminTable(e.target.value));
+document.getElementById('adminRefresh') && document.getElementById('adminRefresh').addEventListener('click', loadSubmissions);
+document.getElementById('adminExport') && document.getElementById('adminExport').addEventListener('click', exportSubmissionsCSV);
+document.getElementById('adminClear') && document.getElementById('adminClear').addEventListener('click', async ()=>{
+  if(!confirm(T[lang].admin.clearConfirm)) return;
+  await dbClearAll();
+  await loadSubmissions();
+});
+document.getElementById('adminTbody') && document.getElementById('adminTbody').addEventListener('click', async (e)=>{
+  const btn = e.target.closest('[data-del]');
+  if(!btn) return;
+  if(!confirm(T[lang].admin.deleteConfirm)) return;
+  await dbDelete(btn.getAttribute('data-del'));
+  await loadSubmissions();
+});
+
+/* ============================================================
+   CONTACT FORM
+============================================================ */
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const record = {
+    id: uid(),
+    createdAt: Date.now(),
+    name: document.getElementById('fieldName').value,
+    email: document.getElementById('fieldEmail').value,
+    phone: document.getElementById('fieldPhone').value,
+    org: document.getElementById('fieldOrg').value,
+    interest: document.getElementById('interestSelect').value,
+    message: document.getElementById('fieldMessage').value,
+    lang: lang
+  };
+  await dbSave(record);
+  document.getElementById('successMsg').classList.add('show');
+  this.reset();
+  this.style.display = 'none';
+  setTimeout(()=>{ this.style.display=''; document.getElementById('successMsg').classList.remove('show'); }, 6000);
+});
+
+/* interest select -> preselect based on entry CTA */
+document.addEventListener('click',(e)=>{
+  const btn = e.target.closest('[data-goto="contact"]');
+  if(btn){
+    const txt = btn.textContent.trim();
+    setTimeout(()=>{
+      const sel = document.getElementById('interestSelect');
+      if(!sel) return;
+      if(txt===T[lang].nav.demo || txt===T[lang].nav.cta) sel.value='demo';
+      else if(txt===T[lang].nav.consult) sel.value='consult';
+    },50);
+  }
+});
+
+/* ============================================================
+   INIT
+============================================================ */
+function animateBrandLogo(){
+  const el = document.getElementById('brandWord');
+  if(!el) return;
+  const text = el.textContent;
+  el.innerHTML = text.split('').map((ch,i)=>`<span class="lg-letter" style="animation-delay:${(0.12+i*0.055).toFixed(2)}s">${ch}</span>`).join('');
+  el.classList.add('lg-word');
+  el.style.animationDelay = (0.12 + text.length*0.055 + 0.5) + 's';
+}
+animateBrandLogo();
+document.getElementById('yearNow').textContent = new Date().getFullYear();
+setLang('en');
+showPage((location.hash||'#home').replace('#',''));
+</script>
+</body>
+</html>
